@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dibc10n2vflrl"
-path="res://.godot/imported/fence-2x3.glb-5692a1d86ff646bbe4f93cbe65f3e68e.scn"
+path="res://.godot/imported/fence-2x3.glb-edc145fb549aabee5b5a3584c8201b75.scn"
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-suburban_20/Models/GLB format/fence-2x3.glb"
-dest_files=["res://.godot/imported/fence-2x3.glb-5692a1d86ff646bbe4f93cbe65f3e68e.scn"]
+source_file="res://Models/GLB format/fence-2x3.glb"
+dest_files=["res://.godot/imported/fence-2x3.glb-edc145fb549aabee5b5a3584c8201b75.scn"]
 
 [params]
 

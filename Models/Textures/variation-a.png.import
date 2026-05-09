@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceueif8f5uicq"
-path="res://.godot/imported/variation-a.png-c4fc020bf522baa1d33738654463d009.ctex"
+path="res://.godot/imported/variation-a.png-a85306ddd3d95a433dc295ed71a56a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-suburban_20/Models/Textures/variation-a.png"
-dest_files=["res://.godot/imported/variation-a.png-c4fc020bf522baa1d33738654463d009.ctex"]
+source_file="res://Models/Textures/variation-a.png"
+dest_files=["res://.godot/imported/variation-a.png-a85306ddd3d95a433dc295ed71a56a38.ctex"]
 
 [params]
 

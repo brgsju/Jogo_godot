@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bjrgp04icuupt"
-path="res://.godot/imported/driveway-long.glb-1dcde2b2a7f32e540c8066959d381032.scn"
+path="res://.godot/imported/driveway-long.glb-9f8759ce0b1677fee37a3a7292d86d44.scn"
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-suburban_20/Models/GLB format/driveway-long.glb"
-dest_files=["res://.godot/imported/driveway-long.glb-1dcde2b2a7f32e540c8066959d381032.scn"]
+source_file="res://Models/GLB format/driveway-long.glb"
+dest_files=["res://.godot/imported/driveway-long.glb-9f8759ce0b1677fee37a3a7292d86d44.scn"]
 
 [params]
 

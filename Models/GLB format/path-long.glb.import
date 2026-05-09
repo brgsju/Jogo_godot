@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://o52vdxadyshn"
-path="res://.godot/imported/path-long.glb-6cb23e70687cc43fd1b9c9d560b47195.scn"
+path="res://.godot/imported/path-long.glb-40a4954d926e4825beab512c10d48c1e.scn"
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb"
-dest_files=["res://.godot/imported/path-long.glb-6cb23e70687cc43fd1b9c9d560b47195.scn"]
+source_file="res://Models/GLB format/path-long.glb"
+dest_files=["res://.godot/imported/path-long.glb-40a4954d926e4825beab512c10d48c1e.scn"]
 
 [params]
 

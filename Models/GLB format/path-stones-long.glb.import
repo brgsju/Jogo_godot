@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bhepu3x61her3"
-path="res://.godot/imported/path-stones-long.glb-f678f9e01e4658f861c3c54ed6a10aec.scn"
+path="res://.godot/imported/path-stones-long.glb-b90dcbf66f64dc2dc8579c88b59f9c7a.scn"
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-suburban_20/Models/GLB format/path-stones-long.glb"
-dest_files=["res://.godot/imported/path-stones-long.glb-f678f9e01e4658f861c3c54ed6a10aec.scn"]
+source_file="res://Models/GLB format/path-stones-long.glb"
+dest_files=["res://.godot/imported/path-stones-long.glb-b90dcbf66f64dc2dc8579c88b59f9c7a.scn"]
 
 [params]
 
