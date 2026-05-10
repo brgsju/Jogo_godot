@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6jb7dt4d54ck"
-path="res://.godot/imported/sophia_diffuse.png-612992ae7da79133a1f8de0c10159c37.ctex"
+path="res://.godot/imported/sophia_diffuse.png-1a02f583cc2436caa7abb5cdeaaae428.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,8 +11,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://character/addons/gdquest_sophia/model/sophia_diffuse.png"
-dest_files=["res://.godot/imported/sophia_diffuse.png-612992ae7da79133a1f8de0c10159c37.ctex"]
+source_file="res://gdquest_sophia/model/sophia_diffuse.png"
+dest_files=["res://.godot/imported/sophia_diffuse.png-1a02f583cc2436caa7abb5cdeaaae428.ctex"]
 
 [params]
 

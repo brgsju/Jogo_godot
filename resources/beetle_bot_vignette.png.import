@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://71jjagmyh0fq"
-path="res://.godot/imported/beetle_bot_vignette.png-9f4ad75c529439e59371b42851e74046.ctex"
+path="res://.godot/imported/beetle_bot_vignette.png-34a75f40a9e111f86102dd4da63add85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/resources/beetle_bot_vignette.png"
-dest_files=["res://.godot/imported/beetle_bot_vignette.png-9f4ad75c529439e59371b42851e74046.ctex"]
+source_file="res://resources/beetle_bot_vignette.png"
+dest_files=["res://.godot/imported/beetle_bot_vignette.png-34a75f40a9e111f86102dd4da63add85.ctex"]
 
 [params]
 

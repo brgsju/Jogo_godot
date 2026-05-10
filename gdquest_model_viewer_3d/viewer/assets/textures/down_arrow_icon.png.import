@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3hg20sllwpo"
-path="res://.godot/imported/down_arrow_icon.png-61a4e33c3ae100b6c0c5e2e4bf5185a2.ctex"
+path="res://.godot/imported/down_arrow_icon.png-5ab51b3eaea6a1ed49ece254d2338871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/addons/gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png"
-dest_files=["res://.godot/imported/down_arrow_icon.png-61a4e33c3ae100b6c0c5e2e4bf5185a2.ctex"]
+source_file="res://gdquest_model_viewer_3d/viewer/assets/textures/down_arrow_icon.png"
+dest_files=["res://.godot/imported/down_arrow_icon.png-5ab51b3eaea6a1ed49ece254d2338871.ctex"]
 
 [params]
 

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://1x0fv0pv2yjy"]
 
 [ext_resource type="Script" uid="uid://bljednqmqve6y" path="res://character_body_3d.gd" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://8eoughjckv68" path="res://script/view.gd" id="1_pkg7o"]
+[ext_resource type="Script" uid="uid://bcg2kkbsnttec" path="res://Scripts/view.gd" id="1_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://gdquest_sophia/model/sophia.glb" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://w4xhdpwarnd2" path="res://28402573_2205_w026_n002_2012b_p1_2012.jpg" id="3_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bkaod1kmg1sbw" path="res://assets/kenney_city-kit-suburban_20/Models/GLB format/building-type-f.glb" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://bkaod1kmg1sbw" path="res://Models/GLB format/building-type-f.glb" id="4_aqk2v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
 albedo_color = Color(0.8156863, 0.34509805, 1, 1)
@@ -31,12 +32,9 @@ albedo_color = Color(1, 1, 0.18431373, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_f3sb7"]
 size = Vector2(10, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-albedo_color = Color(0.9898985, 0.75604105, 0.83774924, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tlwt5"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv5m4"]
+radius = 0.27929688
+height = 1.2955322
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tlwt5"]
 panorama = ExtResource("3_aqk2v")
@@ -57,7 +55,8 @@ script = ExtResource("1_pkg7o")
 target = NodePath("../CharacterBody3D")
 
 [node name="Camera" type="Camera3D" parent="camera_pivot" unique_id=1924613657]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2445068, 2.9223633, 10.394569)
+transform = Transform3D(0.9998882, -0.01495691, 0, 0.01495691, 0.9998882, 0, 0, 0, 1, -0.042575, 1.4203575, 3.4959133)
+keep_aspect = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=432201539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.909891, 0)
@@ -96,23 +95,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0057678223, -0.113586426, 
 shape = SubResource("BoxShape3D_gv5m4")
 
 [node name="floor" type="MeshInstance3D" parent="StaticBody3D" unique_id=1411366062]
-transform = Transform3D(0.99981666, 0.00047738134, -0.01914264, -0.00022573346, 0.99991363, 0.013143539, 0.019147266, -0.013136805, 0.9997302, -0.0146484375, 0.048461914, -0.00038146973)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.0823698, -0.3480841, 0.1982491)
 material_override = SubResource("StandardMaterial3D_gv5m4")
 mesh = SubResource("PlaneMesh_f3sb7")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=883250484]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7435608, 0)
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05184102, 0.42765725, 0.070884466)
 script = ExtResource("1_f3sb7")
+view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1737078317]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4419556, 4.946045, 0)
-material_override = SubResource("StandardMaterial3D_fj7yv")
-mesh = SubResource("CapsuleMesh_tlwt5")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1746590428]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4419556, 4.946045, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8587055, 0)
 shape = SubResource("CapsuleShape3D_gv5m4")
+
+[node name="sophia" parent="CharacterBody3D" unique_id=1932411168 instance=ExtResource("3_036b0")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139479619]
 environment = SubResource("Environment_036b0")

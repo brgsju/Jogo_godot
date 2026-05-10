@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct08dwhevk2ru"
-path="res://.godot/imported/gdquest_model_viewer_3d.svg-dd3ce8d595a8efeef524a92a296c270e.ctex"
+path="res://.godot/imported/gdquest_model_viewer_3d.svg-aaf08ace90946ac2ce6d1259a6896200.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/addons/gdquest_model_viewer_3d/gdquest_model_viewer_3d.svg"
-dest_files=["res://.godot/imported/gdquest_model_viewer_3d.svg-dd3ce8d595a8efeef524a92a296c270e.ctex"]
+source_file="res://gdquest_model_viewer_3d/gdquest_model_viewer_3d.svg"
+dest_files=["res://.godot/imported/gdquest_model_viewer_3d.svg-aaf08ace90946ac2ce6d1259a6896200.ctex"]
 
 [params]
 
