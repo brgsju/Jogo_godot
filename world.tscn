@@ -5,17 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://gdquest_sophia/model/sophia.glb" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://w4xhdpwarnd2" path="res://28402573_2205_w026_n002_2012b_p1_2012.jpg" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bkaod1kmg1sbw" path="res://Models/GLB format/building-type-f.glb" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cgt5q0rmq6rq8" path="res://Models/GLB format/tree-large.glb" id="9_70uel"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
-albedo_color = Color(0.8156863, 0.34509805, 1, 1)
-metallic_specular = 0.0
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_036b0"]
+albedo_color = Color(0, 0.21553227, 0.16051652, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_036b0"]
-material = SubResource("StandardMaterial3D_aqk2v")
-size = Vector3(0.5, 3, 5)
+material = SubResource("ORMMaterial3D_036b0")
+size = Vector3(0.5, 9, 35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwbse"]
-size = Vector3(0.5, 3, 5)
+size = Vector3(0.5, 9, 35)
 
 [sub_resource type="SphereMesh" id="SphereMesh_pkg7o"]
 
@@ -24,13 +24,13 @@ size = Vector3(0.5, 3, 5)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gv5m4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gv5m4"]
-size = Vector3(10, 1, 10)
+size = Vector3(60, 0, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
 albedo_color = Color(1, 1, 0.18431373, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_f3sb7"]
-size = Vector2(10, 10)
+size = Vector2(60, 10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv5m4"]
 radius = 0.27929688
@@ -44,15 +44,21 @@ sky_material = SubResource("PanoramaSkyMaterial_tlwt5")
 
 [sub_resource type="Environment" id="Environment_036b0"]
 background_mode = 2
+background_energy_multiplier = 1.07
 sky = SubResource("Sky_aqk2v")
+sky_custom_fov = 59.5
+sky_rotation = Vector3(0, -2.2759094, 0)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_036b0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_036b0"]
+size = Vector3(2, 2.3320313, 1)
 
 [node name="world" type="Node3D" unique_id=1734052989]
 
 [node name="camera_pivot" type="Node3D" parent="." unique_id=1478441158 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3882563)
 script = ExtResource("1_pkg7o")
 target = NodePath("../CharacterBody3D")
+zoom_minimum = 8
 
 [node name="Camera" type="Camera3D" parent="camera_pivot" unique_id=1924613657]
 transform = Transform3D(0.9998882, -0.01495691, 0, 0.01495691, 0.9998882, 0, 0, 0, 1, -0.042575, 1.4203575, 3.4959133)
@@ -64,12 +70,26 @@ shadow_enabled = true
 shadow_opacity = 0.0
 sky_mode = 1
 
+[node name="wall3" type="StaticBody3D" parent="." unique_id=2020039049]
+transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.7712712, 0, 0.24448633)
+metadata/_edit_group_ = true
+
+[node name="wall" type="MeshInstance3D" parent="wall3" unique_id=1036544456]
+transform = Transform3D(0.9744542, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538534, 0.5909004, 3.0540085, 0)
+visible = false
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=1141741345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59746313, 1.5852966, 0.03213501)
+shape = SubResource("BoxShape3D_dwbse")
+
 [node name="wall2" type="StaticBody3D" parent="." unique_id=1878516800]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2028809, 0, 0)
+transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.7712712, 0, -5.034772)
 metadata/_edit_group_ = true
 
 [node name="wall" type="MeshInstance3D" parent="wall2" unique_id=1444678813]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5909004, 1.5820845, 0)
+transform = Transform3D(0.9744542, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538534, 0.5909004, 3.0540085, 0)
+visible = false
 mesh = SubResource("BoxMesh_036b0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=2087727048]
@@ -77,6 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59746313, 1.5852966, 0.0321
 shape = SubResource("BoxShape3D_dwbse")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1818578172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.413606, 0, -2.4381237)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1671729537]
@@ -91,22 +112,19 @@ shape = SubResource("SphereShape3D_gbfbk")
 physics_material_override = SubResource("PhysicsMaterial_gv5m4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=675327547]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0057678223, -0.113586426, -0.3076172)
 shape = SubResource("BoxShape3D_gv5m4")
 
 [node name="floor" type="MeshInstance3D" parent="StaticBody3D" unique_id=1411366062]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.0823698, -0.3480841, 0.1982491)
 material_override = SubResource("StandardMaterial3D_gv5m4")
 mesh = SubResource("PlaneMesh_f3sb7")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05184102, 0.42765725, 0.070884466)
 script = ExtResource("1_f3sb7")
 view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1746590428]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8587055, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9422293, -0.165)
 shape = SubResource("CapsuleShape3D_gv5m4")
 
 [node name="sophia" parent="CharacterBody3D" unique_id=1932411168 instance=ExtResource("3_036b0")]
@@ -114,8 +132,32 @@ shape = SubResource("CapsuleShape3D_gv5m4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139479619]
 environment = SubResource("Environment_036b0")
 
-[node name="building-type-f2" parent="." unique_id=1424735925 instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.517334, 0, 2.3653374)
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1486928291]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="building-type-f2" unique_id=863020049]
-shape = SubResource("ConcavePolygonShape3D_036b0")
+[node name="building-type-f2" parent="StaticBody3D2" unique_id=1424735925 instance=ExtResource("4_aqk2v")]
+transform = Transform3D(-3.152577, 0, 0.123645015, 0, 3.1550002, 0, -0.123645015, 0, -3.152577, -6.216, 0, -0.762)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=863020049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.517334, 0.16601563, 2.3653374)
+shape = SubResource("BoxShape3D_036b0")
+
+[node name="tree-large2" parent="." unique_id=1547363881 instance=ExtResource("9_70uel")]
+transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 6.268816, 0, -1.4182905)
+
+[node name="tree-large3" parent="." unique_id=1566786910 instance=ExtResource("9_70uel")]
+transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 2.8763654, 0, -1.4182905)
+
+[node name="tree-large4" parent="." unique_id=293609373 instance=ExtResource("9_70uel")]
+transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 4.5384007, 0, -1.4182905)
+
+[node name="tree-large5" parent="." unique_id=1363920757 instance=ExtResource("9_70uel")]
+transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 1.0491006, 0, -1.4182905)
+
+[node name="tree-large7" parent="." unique_id=254991990 instance=ExtResource("9_70uel")]
+transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 1.879874, 0, -4.214675)
+
+[node name="tree-large8" parent="." unique_id=2123220018 instance=ExtResource("9_70uel")]
+transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 8.769861, 0, -4.214675)
+
+[node name="tree-large9" parent="." unique_id=1334579022 instance=ExtResource("9_70uel")]
+transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 5.1958866, 0, -4.214675)
