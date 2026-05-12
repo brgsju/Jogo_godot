@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqba6mgfub8d5"
+path="res://.godot/imported/cheese-slicer.obj-68bcf2660f992079a5f08db996f1ba1d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cheese-slicer.obj-68bcf2660f992079a5f08db996f1ba1d.mesh"]
+
+source_file="res://Models/kenney_food-kit/Models/OBJ format/cheese-slicer.obj"
+dest_files=["res://.godot/imported/cheese-slicer.obj-68bcf2660f992079a5f08db996f1ba1d.mesh", "res://.godot/imported/cheese-slicer.obj-68bcf2660f992079a5f08db996f1ba1d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

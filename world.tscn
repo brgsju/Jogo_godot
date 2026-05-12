@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://gdquest_sophia/model/sophia.glb" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://w4xhdpwarnd2" path="res://28402573_2205_w026_n002_2012b_p1_2012.jpg" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bkaod1kmg1sbw" path="res://Models/GLB format/building-type-f.glb" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://djov0gu2phcam" path="res://prefab/sorvete.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://cgt5q0rmq6rq8" path="res://Models/GLB format/tree-large.glb" id="9_70uel"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_036b0"]
@@ -32,9 +33,9 @@ albedo_color = Color(1, 1, 0.18431373, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_f3sb7"]
 size = Vector2(60, 10)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv5m4"]
-radius = 0.27929688
-height = 1.2955322
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
+radius = 0.34765625
+height = 1.654419
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tlwt5"]
 panorama = ExtResource("3_aqk2v")
@@ -57,11 +58,12 @@ size = Vector3(2, 2.3320313, 1)
 [node name="camera_pivot" type="Node3D" parent="." unique_id=1478441158 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3882563)
 script = ExtResource("1_pkg7o")
-target = NodePath("../CharacterBody3D")
-zoom_minimum = 8
+target = NodePath("../sophia")
+zoom_minimum = 20
+zoom_maximum = 10
 
 [node name="Camera" type="Camera3D" parent="camera_pivot" unique_id=1924613657]
-transform = Transform3D(0.9998882, -0.01495691, 0, 0.01495691, 0.9998882, 0, 0, 0, 1, -0.042575, 1.4203575, 3.4959133)
+transform = Transform3D(0.9998882, -0.01495691, 0, 0.01495691, 0.9998882, 0, 0, 0, 1, -25.446342, 1.9452598, 5.2574663)
 keep_aspect = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=432201539]
@@ -70,29 +72,32 @@ shadow_enabled = true
 shadow_opacity = 0.0
 sky_mode = 1
 
-[node name="wall3" type="StaticBody3D" parent="." unique_id=2020039049]
-transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.7712712, 0, 0.24448633)
+[node name="paredes" type="Node3D" parent="." unique_id=1782476561]
+transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 6.268816, 0, -1.4182905)
+
+[node name="wall3" type="StaticBody3D" parent="paredes" unique_id=2020039049]
+transform = Transform3D(0.0038394448, 0, -0.20672724, 0, 0.2624388, 0, 0.99982756, 0, 0.018569313, -1.4556289, 0, 1.6627768)
 metadata/_edit_group_ = true
 
-[node name="wall" type="MeshInstance3D" parent="wall3" unique_id=1036544456]
+[node name="wall" type="MeshInstance3D" parent="paredes/wall3" unique_id=1036544456]
 transform = Transform3D(0.9744542, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538534, 0.5909004, 3.0540085, 0)
 visible = false
 mesh = SubResource("BoxMesh_036b0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=1141741345]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="paredes/wall3" unique_id=1141741345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59746313, 1.5852966, 0.03213501)
 shape = SubResource("BoxShape3D_dwbse")
 
-[node name="wall2" type="StaticBody3D" parent="." unique_id=1878516800]
-transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.7712712, 0, -5.034772)
+[node name="wall2" type="StaticBody3D" parent="paredes" unique_id=1878516800]
+transform = Transform3D(0.0038394448, 0, -0.20672724, 0, 0.2624388, 0, 0.99982756, 0, 0.018569313, -1.4556289, 0, -3.6164813)
 metadata/_edit_group_ = true
 
-[node name="wall" type="MeshInstance3D" parent="wall2" unique_id=1444678813]
+[node name="wall" type="MeshInstance3D" parent="paredes/wall2" unique_id=1444678813]
 transform = Transform3D(0.9744542, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538534, 0.5909004, 3.0540085, 0)
 visible = false
 mesh = SubResource("BoxMesh_036b0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=2087727048]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="paredes/wall2" unique_id=2087727048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59746313, 1.5852966, 0.03213501)
 shape = SubResource("BoxShape3D_dwbse")
 
@@ -118,16 +123,17 @@ shape = SubResource("BoxShape3D_gv5m4")
 material_override = SubResource("StandardMaterial3D_gv5m4")
 mesh = SubResource("PlaneMesh_f3sb7")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
+[node name="sophia" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
+transform = Transform3D(0.017225586, 0, 0.99985164, 0, 1, 0, -0.99985164, 0, 0.017225586, -24.827635, 0, 0)
 script = ExtResource("1_f3sb7")
 view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1746590428]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9422293, -0.165)
-shape = SubResource("CapsuleShape3D_gv5m4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sophia" unique_id=1746590428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.807747, -0.091065064)
+shape = SubResource("CapsuleShape3D_dwbse")
 
-[node name="sophia" parent="CharacterBody3D" unique_id=1932411168 instance=ExtResource("3_036b0")]
+[node name="sophia" parent="sophia" unique_id=1932411168 instance=ExtResource("3_036b0")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139479619]
 environment = SubResource("Environment_036b0")
@@ -135,29 +141,36 @@ environment = SubResource("Environment_036b0")
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1486928291]
 
 [node name="building-type-f2" parent="StaticBody3D2" unique_id=1424735925 instance=ExtResource("4_aqk2v")]
-transform = Transform3D(-3.152577, 0, 0.123645015, 0, 3.1550002, 0, -0.123645015, 0, -3.152577, -6.216, 0, -0.762)
+transform = Transform3D(0.00033045872, 0, -3.1550007, 0, 3.155, 0, 3.1550007, 0, 0.00033045872, -27.484467, 0.042944074, -0.00023901463)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=863020049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.517334, 0.16601563, 2.3653374)
 shape = SubResource("BoxShape3D_036b0")
 
-[node name="tree-large2" parent="." unique_id=1547363881 instance=ExtResource("9_70uel")]
+[node name="arvores(bia)" type="Node3D" parent="." unique_id=1242760929]
 transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 6.268816, 0, -1.4182905)
 
-[node name="tree-large3" parent="." unique_id=1566786910 instance=ExtResource("9_70uel")]
-transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 2.8763654, 0, -1.4182905)
+[node name="tree-large3" parent="arvores(bia)" unique_id=1566786910 instance=ExtResource("9_70uel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7014329, 0, 0)
 
-[node name="tree-large4" parent="." unique_id=293609373 instance=ExtResource("9_70uel")]
-transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 4.5384007, 0, -1.4182905)
+[node name="tree-large4" parent="arvores(bia)" unique_id=293609373 instance=ExtResource("9_70uel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3577857, 0, 0)
 
-[node name="tree-large5" parent="." unique_id=1363920757 instance=ExtResource("9_70uel")]
-transform = Transform3D(4.8364577, 0, 0, 0, 3.8104122, 0, 0, 0, 1, 1.0491006, 0, -1.4182905)
+[node name="tree-large5" parent="arvores(bia)" unique_id=1363920757 instance=ExtResource("9_70uel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0792434, 0, 0)
 
-[node name="tree-large7" parent="." unique_id=254991990 instance=ExtResource("9_70uel")]
-transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 1.879874, 0, -4.214675)
+[node name="tree-large7" parent="arvores(bia)" unique_id=254991990 instance=ExtResource("9_70uel")]
+transform = Transform3D(1.8000778, 0, 0, 0, 1.8000678, 0, 0, 0, 1.801, -0.90747035, 0, -2.7963843)
 
-[node name="tree-large8" parent="." unique_id=2123220018 instance=ExtResource("9_70uel")]
-transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 8.769861, 0, -4.214675)
+[node name="tree-large8" parent="arvores(bia)" unique_id=2123220018 instance=ExtResource("9_70uel")]
+transform = Transform3D(1.8000778, 0, 0, 0, 1.8000678, 0, 0, 0, 1.801, 0.51712334, 0, -2.7963843)
 
-[node name="tree-large9" parent="." unique_id=1334579022 instance=ExtResource("9_70uel")]
-transform = Transform3D(8.706, 0, 0, 0, 6.859, 0, 0, 0, 1.801, 5.1958866, 0, -4.214675)
+[node name="tree-large9" parent="arvores(bia)" unique_id=1334579022 instance=ExtResource("9_70uel")]
+transform = Transform3D(1.8000778, 0, 0, 0, 1.8000678, 0, 0, 0, 1.801, -0.22184205, 0, -2.7963843)
+
+[node name="tree-large2" parent="arvores(bia)" unique_id=1547363881 instance=ExtResource("9_70uel")]
+
+[node name="sorvete" parent="." unique_id=497050382 instance=ExtResource("7_pkg7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8916883, 0)
+
+[connection signal="body_entered" from="sorvete" to="sorvete" method="_on_body_entered"]

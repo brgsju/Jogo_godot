@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://djov0gu2phcam"]
+
+[ext_resource type="PackedScene" uid="uid://dy4ebapjtxe3d" path="res://Models/kenney_food-kit/Models/GLB format/ice-cream.glb" id="1_q7wcl"]
+[ext_resource type="Script" uid="uid://clwr4pf8do6by" path="res://Scripts/sorvete.gd" id="1_u3a1r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pkg7o"]
+radius = 0.26220703
+height = 0.93873215
+
+[node name="sorvete" type="Area3D" unique_id=497050382]
+script = ExtResource("1_u3a1r")
+
+[node name="ice-cream2" parent="." unique_id=2015942813 instance=ExtResource("1_q7wcl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1142501695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47621876, 0)
+shape = SubResource("CapsuleShape3D_pkg7o")
