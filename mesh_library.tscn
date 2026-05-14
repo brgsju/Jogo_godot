@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bhkylwtiae71e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ichvf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4j53c"]
+albedo_color = Color(0.08683104, 0.61835, 0.50539935, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7hg2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1f6ee"]
+albedo_color = Color(0.61428845, 0.28003138, 0.20116735, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g2w8g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypu5e"]
+albedo_color = Color(0.254707, 0.54386044, 0.84256315, 1)
+
+[node name="MeshLibrary" type="Node3D" unique_id=973028632]
+
+[node name="grass_block" type="MeshInstance3D" parent="." unique_id=1211761143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4554377, 0, 0)
+mesh = SubResource("BoxMesh_ichvf")
+surface_material_override/0 = SubResource("StandardMaterial3D_4j53c")
+
+[node name="ground_block2" type="MeshInstance3D" parent="." unique_id=469900970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024194717, 0.009237289, -0.0044288635)
+mesh = SubResource("BoxMesh_t7hg2")
+surface_material_override/0 = SubResource("StandardMaterial3D_1f6ee")
+
+[node name="wall_block" type="MeshInstance3D" parent="." unique_id=1549675593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1624836, 0, 0)
+mesh = SubResource("BoxMesh_g2w8g")
+surface_material_override/0 = SubResource("StandardMaterial3D_ypu5e")
