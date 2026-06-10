@@ -42,10 +42,10 @@ size = Vector3(3.8099618, 3.5101013, 3.952591)
 size = Vector3(60, 0, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
-albedo_color = Color(1, 1, 0.18431373, 1)
+albedo_color = Color(0.27450982, 0.34901962, 0.03137255, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_f3sb7"]
-size = Vector2(60, 10)
+[sub_resource type="BoxMesh" id="BoxMesh_ic0uy"]
+size = Vector3(25.53, 2.155, 1.495)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ic0uy"]
 
@@ -426,20 +426,8 @@ radius = 0.2944336
 [sub_resource type="SphereShape3D" id="SphereShape3D_2u3nc"]
 radius = 0.4045193
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_036b0"]
-albedo_color = Color(0, 0.21553227, 0.16051652, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
-material = SubResource("ORMMaterial3D_036b0")
-size = Vector3(0.5, 9, 35)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ic0uy"]
-size = Vector3(0.67041016, 7.7440033, 35.04451)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k3n1d"]
-size = Vector3(78.21826, 9.203003, 0.5730133)
-
 [node name="world" type="Node3D" unique_id=1734052989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2655544, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="camera_pivot" type="Node3D" parent="." unique_id=1478441158 node_paths=PackedStringArray("target")]
@@ -454,25 +442,28 @@ transform = Transform3D(0.9998882, -0.01495691, 0, 0.01495691, 0.9998882, 0, 0, 
 keep_aspect = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=432201539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.909891, 0)
+transform = Transform3D(1, 0, 0, 0, 0.39560965, 0.91841877, 0, -0.91841877, 0.39560965, 0, 6.909891, 0)
+light_color = Color(1, 1, 0.3882353, 1)
+light_energy = 0.341
 shadow_enabled = true
+shadow_normal_bias = 1.808
 shadow_opacity = 0.0
 sky_mode = 1
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1818578172]
+[node name="bola" type="RigidBody3D" parent="." unique_id=1818578172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.413606, 0, -2.4381237)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1671729537]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bola" unique_id=1671729537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4255371, 4.3153687, 2.8529053)
 mesh = SubResource("SphereMesh_pkg7o")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1101465016]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bola" unique_id=1101465016]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4345913, 4.321411, 2.8709106)
 shape = SubResource("SphereShape3D_gbfbk")
 
 [node name="sophia" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
-transform = Transform3D(0.017225586, 0, 0.99985164, 0, 1, 0, -0.99985164, 0, 0.017225586, -24.827635, 0, 0)
+transform = Transform3D(0.017225586, 0, 0.99985164, 0, 1, 0, -0.99985164, 0, 0.017225586, -23.853922, 0, 0.4)
 script = ExtResource("1_f3sb7")
 view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true
@@ -486,12 +477,12 @@ shape = SubResource("CapsuleShape3D_dwbse")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139479619]
 environment = SubResource("Environment_036b0")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1486928291]
+[node name="casa" type="StaticBody3D" parent="." unique_id=1486928291]
 
-[node name="building-type-f2" parent="StaticBody3D2" unique_id=1424735925 instance=ExtResource("4_aqk2v")]
+[node name="building-type-f2" parent="casa" unique_id=1424735925 instance=ExtResource("4_aqk2v")]
 transform = Transform3D(0.00033045872, 0, -3.1550007, 0, 3.155, 0, 3.1550007, 0, 0.00033045872, -27.484467, 0.042944074, -0.00023901463)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=863020049]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="casa" unique_id=863020049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.643951, 1.7679839, 0.1470375)
 shape = SubResource("BoxShape3D_036b0")
 
@@ -519,7 +510,7 @@ transform = Transform3D(1.8000778, 0, 0, 0, 1.8000678, 0, 0, 0, 1.801, -0.221842
 [node name="tree-large2" parent="arvores(bia)" unique_id=1547363881 instance=ExtResource("9_70uel")]
 
 [node name="sorvete" parent="." unique_id=497050382 instance=ExtResource("7_pkg7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8916883, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.892, 0.4)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1429471408]
 physics_material_override = SubResource("PhysicsMaterial_gv5m4")
@@ -528,25 +519,26 @@ physics_material_override = SubResource("PhysicsMaterial_gv5m4")
 shape = SubResource("BoxShape3D_gv5m4")
 
 [node name="floor" type="MeshInstance3D" parent="StaticBody3D" unique_id=1411366062]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.015419483, 0.014751673, -0.0033020973)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.015, -4.36, -0.003)
 layers = 15
 material_override = SubResource("StandardMaterial3D_gv5m4")
-mesh = SubResource("PlaneMesh_f3sb7")
+mesh = SubResource("BoxMesh_ic0uy")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1380823761]
+[node name="besouro" type="NavigationRegion3D" parent="." unique_id=1380823761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6401837)
 navigation_mesh = SubResource("NavigationMesh_ic0uy")
 
-[node name="BeetlebotSkin" type="CharacterBody3D" parent="NavigationRegion3D" unique_id=1052835425 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.7712717, 0, 0.24448633)
+[node name="BeetlebotSkin" type="CharacterBody3D" parent="besouro" unique_id=1052835425 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.018569313, 0, -0.99982756, 0, 1, 0, 0.99982756, 0, 0.018569313, -0.771, 0, 0.4)
 script = ExtResource("9_ic0uy")
 target = NodePath("../../sophia")
 
-[node name="beetle_bot" type="Node3D" parent="NavigationRegion3D/BeetlebotSkin" unique_id=1477834762]
+[node name="beetle_bot" type="Node3D" parent="besouro/BeetlebotSkin" unique_id=1477834762]
 
-[node name="Armature" type="Node3D" parent="NavigationRegion3D/BeetlebotSkin/beetle_bot" unique_id=1687523766]
+[node name="Armature" type="Node3D" parent="besouro/BeetlebotSkin/beetle_bot" unique_id=1687523766]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="NavigationRegion3D/BeetlebotSkin/beetle_bot/Armature" unique_id=1788864651]
+[node name="Skeleton3D" type="Skeleton3D" parent="besouro/BeetlebotSkin/beetle_bot/Armature" unique_id=1788864651]
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
@@ -863,7 +855,7 @@ bones/44/position = Vector3(-9.500148e-08, -0.0752704, 0.20448923)
 bones/44/rotation = Quaternion(0.50000006, -0.49999994, -0.49999994, 0.50000006)
 bones/44/scale = Vector3(1, 1, 1)
 
-[node name="Beetle" type="MeshInstance3D" parent="NavigationRegion3D/BeetlebotSkin/beetle_bot/Armature/Skeleton3D" unique_id=1623412160]
+[node name="Beetle" type="MeshInstance3D" parent="besouro/BeetlebotSkin/beetle_bot/Armature/Skeleton3D" unique_id=1623412160]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.0005989224, 1.4901161e-08, -0.0018340349)
 mesh = SubResource("ArrayMesh_r8cq5")
 skin = SubResource("Skin_5536g")
@@ -871,28 +863,28 @@ skeleton = NodePath("..")
 surface_material_override/1 = ExtResource("10_k3n1d")
 surface_material_override/2 = ExtResource("11_2o6r5")
 
-[node name="AnimationTree" type="AnimationTree" parent="NavigationRegion3D/BeetlebotSkin" unique_id=2082838722]
+[node name="AnimationTree" type="AnimationTree" parent="besouro/BeetlebotSkin" unique_id=2082838722]
 tree_root = SubResource("AnimationNodeBlendTree_eteu8")
 parameters/StateMachine/PowerOff/Add2/add_amount = 1.0
 
-[node name="SecondaryActionTimer" type="Timer" parent="NavigationRegion3D/BeetlebotSkin" unique_id=1317452020]
+[node name="SecondaryActionTimer" type="Timer" parent="besouro/BeetlebotSkin" unique_id=1317452020]
 one_shot = true
 autostart = true
 
-[node name="Collisionbody" type="CollisionShape3D" parent="NavigationRegion3D/BeetlebotSkin" unique_id=1271759072]
+[node name="Collisionbody" type="CollisionShape3D" parent="besouro/BeetlebotSkin" unique_id=1271759072]
 transform = Transform3D(1.0000874, 0, 1.0058284e-07, 0, 1, 0, -1.0058284e-07, 0, 1.0000874, -0.011086538, 0.38380063, 0.092757285)
 shape = SubResource("CylinderShape3D_hiqwa")
 
-[node name="Collisionhead" type="CollisionShape3D" parent="NavigationRegion3D/BeetlebotSkin" unique_id=255677230]
+[node name="Collisionhead" type="CollisionShape3D" parent="besouro/BeetlebotSkin" unique_id=255677230]
 transform = Transform3D(1.0000384, 0, 4.4703484e-08, 0, 1, 0, -4.4703484e-08, 0, 1.0000384, 0.023618296, 0.483001, -0.4480765)
 shape = SubResource("SphereShape3D_2u3nc")
 
-[node name="nav_agent" type="NavigationAgent3D" parent="NavigationRegion3D/BeetlebotSkin" unique_id=1376644498]
+[node name="nav_agent" type="NavigationAgent3D" parent="besouro/BeetlebotSkin" unique_id=1376644498]
 path_height_offset = 1.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D" unique_id=11840953]
+[node name="StaticBody3D" type="StaticBody3D" parent="besouro" unique_id=11840953]
 
-[node name="GridMap" type="GridMap" parent="NavigationRegion3D/StaticBody3D" unique_id=731726523]
+[node name="GridMap" type="GridMap" parent="besouro/StaticBody3D" unique_id=731726523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013919115, 0, 2.3774521)
 top_level = true
 mesh_library = ExtResource("8_gbfbk")
@@ -902,33 +894,5 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1411682999]
-
-[node name="wall3" type="StaticBody3D" parent="StaticBody3D3" unique_id=2020039049]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -0.7712717, 0, 0.24448633)
-metadata/_edit_group_ = true
-
-[node name="wall" type="MeshInstance3D" parent="StaticBody3D3/wall3" unique_id=1036544456]
-transform = Transform3D(0.9744542, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538534, 5, 3, 0)
-visible = false
-mesh = SubResource("BoxMesh_036b0")
-
-[node name="wall2" type="StaticBody3D" parent="StaticBody3D3" unique_id=1878516800]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -0.7712717, 0, -5.034772)
-metadata/_edit_group_ = true
-
-[node name="wall" type="MeshInstance3D" parent="StaticBody3D3/wall2" unique_id=1444678813]
-transform = Transform3D(0.9744543, 0, 0, 0, 0.9959591, 0, 0, 0, 2.1538537, 0, 3, 0)
-visible = false
-mesh = SubResource("BoxMesh_036b0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=2085560915]
-transform = Transform3D(-4.2598327e-08, 0, -2.1538537, 0, 0.9960428, 0, 0.9745361, 0, -9.4147936e-08, -0.548, 3, 5.267)
-shape = SubResource("BoxShape3D_ic0uy")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D3" unique_id=484195711]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.219, 3, -5.071)
-shape = SubResource("BoxShape3D_k3n1d")
-
 [connection signal="body_entered" from="sorvete" to="sorvete" method="_on_body_entered"]
-[connection signal="timeout" from="NavigationRegion3D/BeetlebotSkin/SecondaryActionTimer" to="NavigationRegion3D/BeetlebotSkin" method="_on_secondary_action_timer_timeout"]
+[connection signal="timeout" from="besouro/BeetlebotSkin/SecondaryActionTimer" to="besouro/BeetlebotSkin" method="_on_secondary_action_timer_timeout"]
