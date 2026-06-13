@@ -1,3 +1,4 @@
 res://world.tscn
-res://gdquest_model_viewer_3d/viewer/main_theme.tres
 res://meshlibrary.tres
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
+res://beetlebot_skin.gd
