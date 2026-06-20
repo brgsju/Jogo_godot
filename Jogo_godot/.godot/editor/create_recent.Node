@@ -1,0 +1,7 @@
+MeshInstance3D
+Sprite2D
+ParallaxLayer
+Parallax2D
+SubViewport
+CollisionShape3D
+StaticBody3D
