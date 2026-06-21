@@ -1,0 +1,6 @@
+res://world.tscn
+res://meshlibrary.tres
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
+res://character_body_3d.gd
+res://Scripts/sorvete.gd
+res://ui.gd
