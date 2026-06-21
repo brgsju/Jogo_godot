@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://0esmwpfl54da"]
+
+[ext_resource type="Texture2D" uid="uid://dgnvsik6gl8hh" path="res://item pack(16 by 16)/Potion1/b9d5fe5f-e0cf-451c-a68b-eabaa8c957cc-0.png" id="1_lxpbd"]
+[ext_resource type="Script" uid="uid://bc7fplri4kc02" path="res://poçao.gd" id="1_o2a5o"]
+[ext_resource type="Texture2D" uid="uid://b8skhbn2l35sy" path="res://item pack(16 by 16)/Potion1/b9d5fe5f-e0cf-451c-a68b-eabaa8c957cc-1.png" id="2_qefy1"]
+[ext_resource type="Texture2D" uid="uid://bfx6huwdi4jx0" path="res://item pack(16 by 16)/Potion1/b9d5fe5f-e0cf-451c-a68b-eabaa8c957cc-2.png" id="3_apoyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qefy1"]
+atlas = ExtResource("2_qefy1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apoyo"]
+atlas = ExtResource("3_apoyo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxpbd"]
+atlas = ExtResource("1_lxpbd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ybbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qefy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apoyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxpbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o2a5o"]
+radius = 0.07824707
+height = 0.15649414
+
+[node name="sorvete" type="Area3D" unique_id=736163920]
+collision_layer = 8
+script = ExtResource("1_o2a5o")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1994192266]
+transform = Transform3D(0.899695, 0, 0.43651915, 0, 1, 0, -0.43651915, 0, 0.899695, 0.015508041, 0, -0.037823915)
+sprite_frames = SubResource("SpriteFrames_5ybbm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1901272439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036542684, 0.018432617, 0)
+shape = SubResource("CapsuleShape3D_o2a5o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
