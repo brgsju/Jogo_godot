@@ -1,8 +1,15 @@
 extends CharacterBody3D
 
 
+
+# Cria um sinal para avisar a interface
+signal contador_alterado(quantidade)
+
+# Variável para guardar quantos sorvetes/vidas ela tem
+var sorvetes_coletados: int = 1
+
 const SPEED = 300.0
-const JUMP_VELOCITY = 10.0
+const JUMP_VELOCITY = 15.0
 @onready var animator = get_node("sophia/AnimationPlayer")
 
 @export var view : Node3D
@@ -61,3 +68,11 @@ func jump(delta):
 		
 		if gravity > 0 and is_on_floor():
 			gravity = 0
+			
+			
+# O sorvete vai chamar essa função quando encostar nela
+func pegar_sorvete():
+	sorvetes_coletados += 1
+	# Avisa a interface que o número mudou!
+	contador_alterado.emit(sorvetes_coletados)
+		
