@@ -62,19 +62,20 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3exob")
 
 [node name="bg" type="TextureRect" parent="." unique_id=1245597046]
-layout_mode = 0
-offset_top = -6.0
-offset_right = 1152.0
-offset_bottom = 643.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 4
 texture = ExtResource("2_0tvy4")
-expand_mode = 2
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1325828970]
 layout_mode = 1

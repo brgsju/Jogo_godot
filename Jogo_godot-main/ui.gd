@@ -1,8 +1,11 @@
 extends CanvasLayer
 
-# Altera o nome depois do $ para o nome exato do seu nó de texto na esquerda
-@onready var texto_sorvetes = $Label 
+# Usar @export elimina a necessidade de caminhos fixos com $
+@export var texto_sorvetes: Label 
 
 func _on_sophia_contador_alterado(quantidade: int) -> void:
-	# Usamos o + para juntar o texto fixo com o número variável
-	texto_sorvetes.text = "Vidas: " + str(quantidade)
+	# Esta condição impede o jogo de travar se você esquecer de arrastar o nó
+	if texto_sorvetes != null:
+		texto_sorvetes.text = str(quantidade)
+	else:
+		print("Aviso de segurança: O nó de texto não foi associado no Inspetor!")
