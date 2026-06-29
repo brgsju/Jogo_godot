@@ -1,0 +1,40 @@
+[gd_resource type="Theme" format=3 uid="uid://dtmlr1ku7cck8"]
+
+[ext_resource type="FontFile" uid="uid://cfcaek20o6of" path="res://fonte/historia.TTF" id="1_i3wkf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55v0k"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pme7s"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7do68"]
+bg_color = Color(0.882103, 0.32707056, 0.8910694, 0.60784316)
+border_width_left = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnvki"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_i3wkf")
+Button/styles/focus = SubResource("StyleBoxFlat_55v0k")
+Button/styles/hover = SubResource("StyleBoxFlat_pme7s")
+Button/styles/normal = SubResource("StyleBoxFlat_7do68")
+Button/styles/pressed = SubResource("StyleBoxFlat_tnvki")

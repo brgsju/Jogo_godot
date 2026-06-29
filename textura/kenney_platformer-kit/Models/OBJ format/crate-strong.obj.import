@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqss5u5qnwg1f"
+path="res://.godot/imported/crate-strong.obj-dec5ea4f4d14ea12c6cf1a7d07b1be6d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crate-strong.obj-dec5ea4f4d14ea12c6cf1a7d07b1be6d.mesh"]
+
+source_file="res://textura/kenney_platformer-kit/Models/OBJ format/crate-strong.obj"
+dest_files=["res://.godot/imported/crate-strong.obj-dec5ea4f4d14ea12c6cf1a7d07b1be6d.mesh", "res://.godot/imported/crate-strong.obj-dec5ea4f4d14ea12c6cf1a7d07b1be6d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

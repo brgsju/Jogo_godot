@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c35c8mjqlwcu1"]
+
+[ext_resource type="ArrayMesh" uid="uid://h5jbh30dg01m" path="res://textura/kenney_platformer-kit/Models/OBJ format/block-grass-overhang-hexagon.obj" id="1_oaumw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_klvtk"]
+points = PackedVector3Array(0.55, 0.875, 0.31754267, 0.4999315, 1, 0.28857344, 0, 1, 0.5772711, 0, 0.875, 0.63508534, 0.27500004, 0.6002349, 0.47631395, 0.479258, 0.682361, 0.3583234, 0.4999315, 0, 0.28857344, 0.55, 0.682361, 0.23585689, 0.55, 0.875, -0.31754258, 0.4999315, 1, -0.2886977, -0.50003916, 1, 0.28857344, 0.070634305, 0.682361, 0.5941802, -0.55, 0.875, 0.31754267, -0.4793657, 0.682361, 0.3583234, -0.07074195, 0.682361, 0.5941802, 0, 0, 0.5772711, 0.55, 0.6002349, 5.9604645e-08, 0.4999315, 0, -0.2886977, 0.55, 0.682361, -0.23598114, 0.479258, 0.682361, -0.35844767, 0, 0.875, -0.6350852, 0, 1, -0.57739544, -0.50003916, 1, -0.2886977, -0.55, 0.682361, 0.23585689, -0.50003916, 0, 0.28857344, -0.55, 0.875, -0.31754258, -0.275, 0.6002349, 0.4761896, 0, 0, -0.57739544, 0.27500004, 0.6002349, -0.4763139, 0.070634305, 0.682361, -0.5943045, -0.07074195, 0.682361, -0.5943045, -0.4793657, 0.682361, -0.35844767, -0.55, 0.6002349, 5.9604645e-08, -0.50003916, 0, -0.2886977, -0.55, 0.682361, -0.23598114, -0.275, 0.6002349, -0.4763139)
+
+[node name="Node3D" type="Node3D" unique_id=742320968]
+
+[node name="BlockGrassOverhangHexagon" type="MeshInstance3D" parent="." unique_id=1024648515]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.5078316, -8.078788, -0.262)
+mesh = ExtResource("1_oaumw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlockGrassOverhangHexagon" unique_id=1132474125]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlockGrassOverhangHexagon/StaticBody3D" unique_id=1181621988]
+shape = SubResource("ConvexPolygonShape3D_klvtk")

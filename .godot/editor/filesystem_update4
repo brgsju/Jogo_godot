@@ -1,0 +1,9 @@
+res://resources/animacao_hit/hit.tres
+res://fase1.tscn
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
+res://bloco.tres
+res://title.tres
+res://fase2.tscn
+res://fase21.tscn
+res://character_body_3d.gd
+res://fase_1.gd
