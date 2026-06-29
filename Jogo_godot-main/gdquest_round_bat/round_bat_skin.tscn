@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://tyjgdu65yj3m"]
+
+[ext_resource type="Script" uid="uid://d3ton6yy514il" path="res://gdquest_round_bat/round_bat_skin.gd" id="1_c7nwv"]
+[ext_resource type="PackedScene" uid="uid://h2we7rb772hy" path="res://gdquest_round_bat/model/bat.glb" id="1_tt0gg"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_448ki"]
+animation = &"custom/hurt"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_41mbd"]
+mix_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v8u50"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_omnlg"]
+graph_offset = Vector2(-160, 81.1)
+nodes/output/position = Vector2(280, 160)
+nodes/Hurt/node = SubResource("AnimationNodeAnimation_448ki")
+nodes/Hurt/position = Vector2(-151, 282.818)
+nodes/HurtShot/node = SubResource("AnimationNodeOneShot_41mbd")
+nodes/HurtShot/position = Vector2(60, 140)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_v8u50")
+nodes/Idle/position = Vector2(-160, 160)
+node_connections = [&"output", 0, &"HurtShot", &"HurtShot", 0, &"Idle", &"HurtShot", 1, &"Hurt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsefx"]
+radius = 0.43115234
+height = 0.8623047
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7d50r"]
+radius = 0.35412598
+height = 0.70825195
+
+[node name="RoundBatSkin" type="CharacterBody3D" unique_id=1629714441]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
+script = ExtResource("1_c7nwv")
+
+[node name="RoundBat" parent="." unique_id=466351822 instance=ExtResource("1_tt0gg")]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1550199650]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/../RoundBat")
+tree_root = SubResource("AnimationNodeBlendTree_omnlg")
+anim_player = NodePath("../RoundBat/AnimationPlayer")
+parameters/HurtShot/active = false
+parameters/HurtShot/internal_active = false
+parameters/HurtShot/request = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2122980620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036199808, 0)
+shape = SubResource("CapsuleShape3D_rsefx")
+
+[node name="areadano" type="Area3D" parent="." unique_id=1807055283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041888952, 0, 0.028172016)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areadano" unique_id=1195446917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021362305, 0)
+shape = SubResource("CapsuleShape3D_7d50r")
+
+[connection signal="body_entered" from="areadano" to="." method="_on_areadano_body_entered"]

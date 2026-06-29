@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://br5svp35gul8g"]
+
+[ext_resource type="Texture2D" uid="uid://6jb7dt4d54ck" path="res://gdquest_sophia/model/sophia_diffuse.png" id="1_3hsve"]
+
+[resource]
+albedo_texture = ExtResource("1_3hsve")

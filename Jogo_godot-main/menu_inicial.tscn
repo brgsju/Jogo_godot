@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://p17h7h3tenvp"]
+
+[ext_resource type="Script" uid="uid://bp8k4dut33mmw" path="res://menu_inicial.gd" id="1_3exob"]
+[ext_resource type="Texture2D" uid="uid://beja6vrplhmo2" path="res://Capturar1.PNG" id="2_0tvy4"]
+[ext_resource type="Theme" uid="uid://dtmlr1ku7cck8" path="res://title.tres" id="3_ktf6r"]
+[ext_resource type="FontFile" uid="uid://cfcaek20o6of" path="res://fonte/historia.TTF" id="3_ttr8g"]
+[ext_resource type="FontFile" uid="uid://dtuv6nq4ur8sw" path="res://fonte/sair.TTF" id="4_ktf6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55v0k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mehpy"]
+bg_color = Color(0.31541365, 0.6725515, 0.61444175, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v8tx"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38bte"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x22u"]
+bg_color = Color(0.4772684, 0.6725133, 0.1561144, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33058"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omm3f"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lah4e"]
+bg_color = Color(0.3137255, 0.64705884, 0.78039217, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MenuInicial" type="Control" unique_id=1674831075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3exob")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1245597046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("2_0tvy4")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1325828970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 289.0
+offset_top = 266.0
+offset_right = -292.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1327628354]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=801439008]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=433646534]
+layout_mode = 2
+theme = ExtResource("3_ktf6r")
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1516472478]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_55v0k")
+
+[node name="historia" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1434518599]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ttr8g")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_mehpy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1v8tx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_38bte")
+text = "HISTORIA"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1253079661]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_55v0k")
+
+[node name="sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1365619674]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ktf6r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5x22u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_33058")
+theme_override_styles/hover = SubResource("StyleBoxFlat_omm3f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lah4e")
+text = "SAIR"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/historia" to="." method="_on_historia_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
