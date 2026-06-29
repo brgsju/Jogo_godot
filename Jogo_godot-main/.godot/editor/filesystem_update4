@@ -1,6 +1,10 @@
 res://fase1.tscn
 res://bloco.tres
 res://title.tres
-res://gdquest_model_viewer_3d/viewer/main_theme.tres
 res://fase_1.gd
-res://beetlebot_skin.gd
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
+res://character_body_3d.gd
+res://spike.gd
+res://resources/animacao_hit/mixamo_com.res
+res://resources/animacao_hit/Take 001.res
+res://sophia_dano.tres

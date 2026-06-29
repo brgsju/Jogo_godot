@@ -3,9 +3,11 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$sophia.sophia_morreu.connect(_on_sophia_morreu)
 
-
+func _on_sophia_morreu():
+	$TelaGameOver.visible = true
+	get_tree().paused = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -34,3 +36,7 @@ func _on_button_sair_menu_pressed() -> void:
 	# do painel de Arquivos (File System) para dentro dos parênteses 
 	# para o Godot preencher o caminho "res://..." exato para você.
 	get_tree().change_scene_to_file("res://menu_inicial.tscn")
+
+
+func _on_static_body_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

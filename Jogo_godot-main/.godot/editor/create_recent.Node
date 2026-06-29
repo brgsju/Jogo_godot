@@ -1,7 +1,8 @@
+Node3D
+Area3D
 AnimationPlayer
 RayCast3D
 CollisionShape3D
-Area3D
 Button
 Label
 ColorRect
@@ -12,4 +13,3 @@ TextureRect
 HBoxContainer
 CharacterBody3D
 OmniLight3D
-Node3D
