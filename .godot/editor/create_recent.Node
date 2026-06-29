@@ -1,9 +1,10 @@
+AnimationPlayer
+CollisionShape3D
+CharacterBody3D
 OmniLight3D
 DirectionalLight3D
 Area3D
-CollisionShape3D
 Node3D
-AnimationPlayer
 RayCast3D
 Button
 Label
@@ -11,5 +12,3 @@ ColorRect
 CanvasLayer
 GridMap
 StaticBody3D
-TextureRect
-HBoxContainer
