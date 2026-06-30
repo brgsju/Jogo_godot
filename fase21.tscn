@@ -73,6 +73,7 @@ background_energy_multiplier = 1.07
 sky = SubResource("Sky_aqk2v")
 sky_custom_fov = 59.5
 sky_rotation = Vector3(0, -2.2759094, 0)
+ssao_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_705jf"]
 size = Vector3(1, 6.1743774, 11.186035)
