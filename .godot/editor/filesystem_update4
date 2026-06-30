@@ -1,4 +1,6 @@
 res://fase21.tscn
 res://bloco.tres
 res://title.tres
-res://mapa_blocos.tres
+res://character_body_3d.gd
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
+res://fase1.tscn

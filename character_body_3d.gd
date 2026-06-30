@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 signal sophia_morreu
 # Cria um sinal para avisar a interface
 signal contador_alterado(quantidade)
@@ -24,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -gravity
 		move_and_slide()
 		return # Pula o resto da função (handle_input, etc)
+		
 	handle_input(delta)
 	apply_gravity(delta)
 	jump(delta)
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if Vector2(velocity.z, velocity.x).length()>0:
+	if Vector2(velocity.z, velocity.x).length() > 0:
 		rotation_direction = Vector2(velocity.z, velocity.x).angle()
 	
 	rotation.y = lerp_angle(rotation.y, rotation_direction, delta * 10)
@@ -57,7 +57,7 @@ func handle_animations():
 		print("dano animcacao")
 		return
 
-# Caso contrário, mantém a sua lógica original
+	# Caso contrário, mantém a sua lógica original
 	if is_on_floor():
 		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
 			animator.play("Run", 0.3)
@@ -65,26 +65,31 @@ func handle_animations():
 			animator.play("Idle", 0.3)
 	else:
 		animator.play("Jump", 0.3)
+		
 	if !is_on_floor() and gravity > 2:
 		animator.play("Fall", 0.3)
 
 func apply_gravity(delta):
 	if not is_on_floor():
+		# Se está caindo, aumenta a gravidade
 		gravity += 25 * delta
+	else:
+		# Se encostou no chão, zera o acúmulo de gravidade!
+		# Mantemos 0.1 apenas para o Godot ter certeza de que ela está grudada no chão
+		if gravity > 0:
+			gravity = 0.1
 
 func jump(delta):
+	# Se apertou pular e está no chão, joga a gravidade pra cima
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		gravity = -JUMP_VELOCITY
-		
-		if gravity > 0 and is_on_floor():
-			gravity = 0
-			
 			
 # O sorvete vai chamar essa função quando encostar nela
 func pegar_sorvete():
 	sorvetes_coletados += 1
 	# Avisa a interface que o número mudou!
 	contador_alterado.emit(sorvetes_coletados)
+	
 func tomar_dano():
 	# 1. Animação de dano
 	esta_tomando_dano = true # Bloqueia o input
