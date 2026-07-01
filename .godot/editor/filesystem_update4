@@ -1,8 +1,5 @@
-res://fase1.tscn
-res://title.tres
-res://bloco.tres
-res://zonafoco.gd
-res://gdquest_gdbot/model/materials/heart_core_mat.tres
-res://portal_12.gd
-res://zonaqueda.gd
 res://fase3.tscn
+res://title.tres
+res://gdquest_gdbot/model/materials/heart_core_mat.tres
+res://bloco.tres
+res://gdquest_model_viewer_3d/viewer/main_theme.tres

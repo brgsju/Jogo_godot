@@ -71,6 +71,11 @@ sky = SubResource("Sky_aqk2v")
 sky_custom_fov = 59.5
 sky_rotation = Vector3(0, -2.2759094, 0)
 ssao_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0363
+volumetric_fog_albedo = Color(0.30200383, 0.30200383, 0.30200383, 1)
+volumetric_fog_ambient_inject = 1.46
+volumetric_fog_sky_affect = 0.229
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_705jf"]
 size = Vector3(1, 6.1743774, 11.186035)
