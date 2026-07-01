@@ -1,11 +1,10 @@
 extends Area3D
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	# Substitua pelo nome exato do nó do seu personagem (ex: "sophia" ou "Player")
-	if body.name == "sophia": 
-		# Insira o caminho correto do arquivo da sua segunda fase
-		get_tree().change_scene_to_file("res://fase21.tscn")
-
-
 func _on_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+	if body.name == "sophia":
+		# Se a Sophia tiver uma lógica interna de morte, chame-a:
+		if body.has_method("morrer"):
+			body.morrer()
+		
+		# Opcional: Se você quiser garantir que a fase saiba da queda
+		# via sinal, o ideal é conectar o sinal na própria fase.

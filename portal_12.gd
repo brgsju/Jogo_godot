@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 	
 func _on_body_entered(body):
 	if body.name == "sophia":
-		get_tree().change_scene_to_file("res://fase3.tscn")
+		print("entrou portal")
+		get_tree().change_scene_to_file("res://fase21.tscn")
