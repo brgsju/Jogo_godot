@@ -121,3 +121,8 @@ func tomar_dano():
 		print("dano cor")
 		material.albedo_color = Color(1, 1, 1, 1)
 	esta_tomando_dano = false # Libera o input novamente
+	
+# Adicione no final do script da Sophia
+func quicar_no_boss() -> void:
+	# Esse é o impulso do quique! Pode aumentar se achar fraco.
+	velocity.y = 8.0

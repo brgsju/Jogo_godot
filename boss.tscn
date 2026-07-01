@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://duaqpp503bri4"]
+
+[ext_resource type="Script" uid="uid://dd5dpo6mjhn77" path="res://boss.gd" id="1_6xxrv"]
+[ext_resource type="PackedScene" uid="uid://bdyptm7smjixm" path="res://gdquest_gdbot/gdbot_skin.tscn" id="2_skx2t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lnbgr"]
+height = 1.6166992
+radius = 0.37402344
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o1i15"]
+radius = 0.40979564
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_we8h1"]
+height = 1.0351563
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6xxrv"]
+radius = 4.078438
+
+[node name="boss" type="CharacterBody3D" unique_id=818677629]
+script = ExtResource("1_6xxrv")
+
+[node name="GDbotSkin" parent="." unique_id=1881891472 instance=ExtResource("2_skx2t")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1576970561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8083496, 0)
+shape = SubResource("CylinderShape3D_lnbgr")
+
+[node name="Areadanocabeça" type="Area3D" parent="." unique_id=310489678]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areadanocabeça" unique_id=1594820269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2117584, 0)
+shape = SubResource("SphereShape3D_o1i15")
+
+[node name="Areadanocorpo" type="Area3D" parent="." unique_id=1514997283]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areadanocorpo" unique_id=1472365010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34472656, 0)
+shape = SubResource("CapsuleShape3D_we8h1")
+
+[node name="Arevisao" type="Area3D" parent="." unique_id=737232233]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arevisao" unique_id=122756815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14036047, 0, 0)
+shape = SubResource("SphereShape3D_6xxrv")
+
+[connection signal="body_entered" from="Areadanocabeça" to="." method="_on_areadanocabeça_body_entered"]
+[connection signal="body_entered" from="Areadanocorpo" to="." method="_on_areadanocorpo_body_entered"]

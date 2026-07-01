@@ -1,5 +1,19 @@
-res://fase1.tscn
+res://resources/animacao_hit/Take 001.res
+res://resources/animacao_hit/mixamo_com.tres
+res://resources/animacao_hit/hit.tres
+res://fase3.tscn
+res://gdquest_model_viewer_3d/viewer/main_theme.tres
 res://title.tres
 res://bloco.tres
+res://fase_1.gd
+res://fase1.tscn
+res://portal_12.gd
+res://zonaqueda.gd
 res://fase21.tscn
-res://fase3.tscn
+res://boss.tscn
+res://gdquest_gdbot/model/materials/heart_core_mat.tres
+res://boss.gd
+res://character_body_3d.gd
+res://beetlebot_skin.tscn
+res://beetlebot_skin.gd
+res://camera_3d.gd

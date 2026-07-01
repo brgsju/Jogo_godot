@@ -1,67 +1,52 @@
 extends CharacterBody3D
 
-const SPEED = 2.0
-var direcao = 1 # 1 para direita, -1 para esquerda
-var andando = true
-var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
+@export var velocidade: float = 2.5 # Um pouco mais rápido que o patrulheiro!
+@export var gravidade: float = 9.8
 
-# Novo cronômetro para as ações
-var tempo_acao = 0.0 
+var jogador: Node3D = null
 
-@onready var sensor_chao = $RayCast3D 
+func _ready() -> void:
+	# Quando o inimigo nasce, ele procura a Sophia pelo grupo "player"
+	jogador = get_tree().get_first_node_in_group("player") as Node3D
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
+	# 1. Aplica a gravidade
 	if not is_on_floor():
 		velocity.y -= gravidade * delta
-		
-	# 1. Diminui o cronômetro a cada frame
-	tempo_acao -= delta
-	if tempo_acao <= 0:
-		sortear_acao()
-		
-	# 2. Aplica o movimento se estiver no estado "andando"
-	if andando:
-		velocity.x = direcao * SPEED
+
+	# 2. Inteligência de Perseguição
+	if jogador != null:
+		# Calcula a direção da Sophia
+		var direcao = jogador.global_position - global_position
+		direcao.y = 0 # Ignora a altura para ele não tentar voar ou cavar
+		direcao = direcao.normalized()
+
+		# Faz o inimigo olhar para a Sophia (só se ela estiver um pouco distante)
+		if direcao.length() > 0.1:
+			look_at(global_position + direcao, Vector3.UP)
+
+		# Aplica a velocidade na direção dela
+		velocity.x = direcao.x * velocidade
+		velocity.z = direcao.z * velocidade
 	else:
+		# Se a Sophia não for encontrada, ele fica parado
 		velocity.x = 0
-		
+		velocity.z = 0
+
+	# Executa o movimento
 	move_and_slide()
-	
-	# 3. Segurança: Só vira pelo buraco ou parede se estiver andando
-	if andando and (is_on_wall() or not sensor_chao.is_colliding()):
-		inverter_direcao()
-		# Reseta o tempo para ele não travar
-		tempo_acao = randf_range(1.0, 2.0) 
 
+# --- SINAIS DE COLISÃO (Obrigatório conectar os nós de wi-fi neste novo script!) ---
 
-func sortear_acao():
-	# Define que a próxima ação vai durar entre 1 e 3 segundos
-	tempo_acao = randf_range(1.0, 3.0) 
-	
-	# Sorteia um número: 0, 1 ou 2
-	var sorteio = randi() % 3 
-	
-	if sorteio == 0:
-		andando = false # Para para descansar
-	elif sorteio == 1:
-		andando = true  # Continua andando para onde já olhava
-	elif sorteio == 2:
-		andando = true
-		inverter_direcao() # Vira e anda pro outro lado
-
-
-func inverter_direcao():
-	direcao = direcao * -1
-	rotation_degrees.y += 180
-
-
-# --- SINAIS DE COLISÃO ---
-
+# Quando a Sophia toca no CORPO (Toma dano)
 func _on_areadano_body_entered(body: Node3D) -> void:
-	if body.name == "sophia": 
-		print("Besouro machucou a Sophia!")
+	if body.has_method("tomar_dano"):
+		print("O perseguidor pegou a Sophia!")
+		body.tomar_dano()
 
+# Quando a Sophia cai na CABEÇA (Derrota o inimigo)
 func _on_areacabeca_body_entered(body: Node3D) -> void:
-	if body.name == "sophia": 
-		print("Sophia esmagou o besouro!")
-		queue_free()
+	if body.has_method("quicar_no_boss"):
+		print("Sophia pisou no perseguidor!")
+		body.quicar_no_boss() 
+		queue_free() # Destrói o inimigo
