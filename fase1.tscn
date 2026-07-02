@@ -117,7 +117,7 @@ visible = false
 keep_aspect = 0
 
 [node name="sophia" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75.84433, 8.5546875, 0.3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -37.798553, 0.013938904, 0.3)
 script = ExtResource("1_f3sb7")
 view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true

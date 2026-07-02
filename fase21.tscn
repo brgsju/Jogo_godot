@@ -230,7 +230,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4345913, 4.321411, 64.38171
 shape = SubResource("SphereShape3D_gbfbk")
 
 [node name="sophia" type="CharacterBody3D" parent="." unique_id=883250484 node_paths=PackedStringArray("view")]
-transform = Transform3D(0.017225586, 0, 0.99985164, 0, 1, 0, -0.99985164, 0, 0.017225586, 17.810015, 26.51501, 0.4)
+transform = Transform3D(0.017225586, 0, 0.99985164, 0, 1, 0, -0.99985164, 0, 0.017225586, -37.957653, 0.29191113, 0.4)
 script = ExtResource("3_ksotv")
 view = NodePath("../camera_pivot")
 metadata/_edit_group_ = true

@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://p17h7h3tenvp"]
+[gd_scene format=3 uid="uid://dhe88kqddcvro"]
 
-[ext_resource type="Script" uid="uid://bp8k4dut33mmw" path="res://menu_inicial.gd" id="1_3exob"]
-[ext_resource type="Texture2D" uid="uid://beja6vrplhmo2" path="res://Capturar1.PNG" id="2_0tvy4"]
-[ext_resource type="Theme" uid="uid://dtmlr1ku7cck8" path="res://title.tres" id="3_ktf6r"]
-[ext_resource type="FontFile" uid="uid://dtuv6nq4ur8sw" path="res://fonte/sair.TTF" id="4_ktf6r"]
+[ext_resource type="Script" uid="uid://bp8k4dut33mmw" path="res://menu_inicial.gd" id="1_u4bre"]
+[ext_resource type="Texture2D" uid="uid://bxtaibi1fy8uv" path="res://textura/imgfinal.png" id="2_2aoja"]
+[ext_resource type="FontFile" uid="uid://dtuv6nq4ur8sw" path="res://fonte/sair.TTF" id="5_d8ejm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55v0k"]
 
@@ -42,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3exob")
+script = ExtResource("1_u4bre")
 
 [node name="bg" type="TextureRect" parent="." unique_id=1245597046]
 layout_mode = 1
@@ -52,7 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-texture = ExtResource("2_0tvy4")
+texture = ExtResource("2_2aoja")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1325828970]
@@ -60,10 +59,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 289.0
-offset_top = 266.0
-offset_right = -292.0
-offset_bottom = 239.0
+offset_left = 308.0
+offset_top = 507.0
+offset_right = -299.0
+offset_bottom = 484.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
@@ -77,29 +76,18 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=433646534]
-layout_mode = 2
-theme = ExtResource("3_ktf6r")
-theme_override_font_sizes/font_size = 50
-text = "START"
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1516472478]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_55v0k")
-
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1253079661]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_55v0k")
 
 [node name="sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1365619674]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_ktf6r")
+theme_override_fonts/font = ExtResource("5_d8ejm")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_5x22u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_33058")
 theme_override_styles/hover = SubResource("StyleBoxFlat_omm3f")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lah4e")
-text = "SAIR"
+text = "       sair       "
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
