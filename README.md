@@ -1,17 +1,37 @@
-# Godot AmbientCG Integration Plugin
+# Sweet Light
 
-  _Built in 4.5.1 and may not work in earlier versions before 4.4_
-  
+Bem-vindo ao **Sweet Light**, um jogo de plataforma 2.5D desenvolvido na Godot Engine!
 
-## Features
-### Easy to Search and Download PBR Surfaces and HDRI Environments
+## 🎮 Sobre o Projeto
+**Sweet Light** acompanha a jornada de **Sophia**, uma exploradora que atravessa um mundo vibrante e doce, até que falhas na realidade — manifestadas como insetos robóticos — começam a corromper o ambiente, transformando o mundo em um cenário sombrio e destruído. No centro desse caos, Sophia deve enfrentar o **Iniciação Armagedom**, o arquiteto dessa destruição.
 
-<img width="515" height="345" alt="editor_screenshot_2026-01-10T162710" src="https://github.com/user-attachments/assets/dae775b1-250c-4b4a-9127-b34e7570f7eb" />
+## 🛠 Tecnologias e Ferramentas
+* **Engine:** [Godot 4.6.2](https://godotengine.org/)
+* **Linguagem:** GDScript
+* **Modelagem 3D:** Foco em integração de assets 3D com jogabilidade de plataforma.
+* **Gerenciamento:** Controle de versão via Git.
 
-### Download from AmbientCG.com and automatically populate Materials + Environments with customization options
+## 🚀 Funcionalidades Principais
+* **Gameplay 2.5D:** Mistura de navegação 3D com jogabilidade de plataforma.
+* **Sistema de Inimigos:** Inimigos com IA de perseguição e sistema de detecção (RayCast3D).
+* **Sistema de Dano:** Lógica de vida, knockback, invencibilidade e interação entre áreas (hitboxes).
+* **Narrativa Progressiva:** Transição temática entre cenários coloridos e ambientes corrompidos.
+* **Boss Fight:** Batalha dinâmica contra o *Iniciação Armagedom*.
 
-<img width="515" height="345" alt="image" src="https://github.com/user-attachments/assets/98fe5701-3e4a-4cdf-8d75-9ae8c52ef338" />
+## 📂 Estrutura de Arquivos
+- `/scenes`: Cenas do jogo (Fases, Menu, MenuFinal, Sophia, Boss).
+- `/scripts`: Lógica de controle dos personagens e inimigos.
+- `/assets`: Modelos 3D, texturas e UI.
 
-# Developer Notes
-  - Substance Painter Materials are ignored by the material browser. This may change later on, godot can't use them right now!
-  - Several Paths can be changed in Project Settings under "ambientcg/"
+## 💡 Status do Desenvolvimento
+- [x] Movimentação da personagem (Sophia)
+- [x] Sistema de coleta de sorvetes
+- [x] Implementação do Boss (GDBot/Iniciação Armagedom)
+- [x] Sistema de dano e colisão
+- [x] Transição de cenas (Menu -> História -> Fase -> Fim)
+
+## 👤 Desenvolvedor
+Este projeto foi desenvolvido focando na aplicação de lógica estruturada e orientação a objetos em cenários de games. O desenvolvimento do *Sweet Light* utiliza a Godot Engine, onde aplico conceitos avançados de programação para criar sistemas dinâmicos, como IAs de perseguição, sistemas de colisão personalizados e estados de jogo, integrando assets 3D a mecânicas de plataforma responsivas.
+
+---
+*Feito com Godot Engine 4.6.2*
