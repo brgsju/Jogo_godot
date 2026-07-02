@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+
 signal sophia_morreu
 # Cria um sinal para avisar a interface
 signal contador_alterado(quantidade)
@@ -93,7 +94,9 @@ func pegar_sorvete():
 func tomar_dano():
 	# 1. Animação de dano
 	esta_tomando_dano = true # Bloqueia o input
-	animator.play("novas_animacoes/dano")	
+	animator.play("novas_animacoes/dano")
+	esta_tomando_dano = true # Bloqueia o input
+		# ... (resto do seu código continua igual)
 
 	# 2. Lógica de Knockback
 	# Calcula a direção oposta à frente da Sophia (eixo Z negativo)
@@ -126,3 +129,7 @@ func tomar_dano():
 func quicar_no_boss() -> void:
 	# Esse é o impulso do quique! Pode aumentar se achar fraco.
 	velocity.y = 8.0
+
+
+func _on_portal_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

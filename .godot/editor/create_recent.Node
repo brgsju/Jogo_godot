@@ -1,8 +1,9 @@
-WorldEnvironment
-Camera3D
 CollisionShape3D
 Area3D
 CharacterBody3D
+RayCast3D
+WorldEnvironment
+Camera3D
 StaticBody3D
 MeshInstance3D
 Sprite3D

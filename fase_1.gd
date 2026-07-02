@@ -54,3 +54,7 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 
 func _on_portal_12_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.
+
+
+func _on_portal_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

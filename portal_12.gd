@@ -1,16 +1,11 @@
 extends Area3D
 
+# O Godot vai abrir uma caixinha no Inspetor com esse caminho. 
+# Já deixei configurado para a fase 21 como você pediu!
+@export var proxima_fase: String = "res://fase21.tscn"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-func _on_body_entered(body):
+func _on_body_entered(body: Node3D) -> void:
+	# Verifica se quem encostou no portal foi a Sophia
 	if body.name == "sophia":
-		print("entrou portal")
-		get_tree().change_scene_to_file("res://fase21.tscn")
+		print("A Sophia entrou no portal! Carregando a próxima fase...")
+		get_tree().change_scene_to_file(proxima_fase)

@@ -17,7 +17,7 @@ environment_file_directory="res://AmbientCG/Environments"
 [application]
 
 config/name="Jogo Godot Main"
-run/main_scene="uid://1x0fv0pv2yjy"
+run/main_scene="uid://p17h7h3tenvp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
